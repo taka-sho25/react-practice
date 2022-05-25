@@ -29,6 +29,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/function-component-definition': 'off',
     'react/button-has-type': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'import/extensions': [
       'error',
       {
