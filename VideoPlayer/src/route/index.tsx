@@ -1,4 +1,10 @@
-import { RouteProps, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+  RouteProps,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  RouteComponentProps,
+} from 'react-router-dom'
 
 import { Home } from '@/pages/Home'
 import { Hls } from '@/pages/Hls'
@@ -7,25 +13,27 @@ import { ShakaPlayer } from '@/pages/Shaka'
 type IRoute = RouteProps & {
   path: string
   name: string
+  component: React.ComponentType<any>
+  props?: any
 }
 
 export const routes: IRoute[] = [
   {
     exact: true,
     path: '/',
-    component: () => <Home />,
+    component: Home,
     name: 'Home',
   },
   {
     exact: true,
     path: '/hls',
-    component: () => <Hls />,
+    component: Hls,
     name: 'HLS',
   },
   {
     exact: true,
     path: '/shaka',
-    component: () => <ShakaPlayer />,
+    component: ShakaPlayer,
     name: 'ShakaPlayer',
   },
 ]
@@ -33,12 +41,12 @@ export const routes: IRoute[] = [
 export const RouterComponent = () => (
   <Router>
     <Switch>
-      {routes.map((route) => (
+      {routes.map(({ name, path, exact, component: Component, props: routeProps }) => (
         <Route
-          key={route.name}
-          path={route.path}
-          exact={route.exact}
-          children={<route.component />}
+          key={name}
+          path={path}
+          exact={exact}
+          render={(props: RouteComponentProps<any>) => <Component {...props} {...routeProps} />}
         />
       ))}
     </Switch>
