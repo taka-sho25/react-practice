@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom'
 
 import { Home } from '@/pages/Home'
-import { Hls } from '@/pages/Hls'
-import { ShakaPlayer } from '@/pages/Shaka'
+import { HlsPage } from '@/pages/Hls'
+import { ShakaPlayerPage } from '@/pages/Shaka'
 
 type IRoute = RouteProps & {
   path: string
@@ -27,13 +27,13 @@ export const routes: IRoute[] = [
   {
     exact: true,
     path: '/hls',
-    component: Hls,
+    component: HlsPage,
     name: 'HLS',
   },
   {
     exact: true,
     path: '/shaka',
-    component: ShakaPlayer,
+    component: ShakaPlayerPage,
     name: 'ShakaPlayer',
   },
 ]

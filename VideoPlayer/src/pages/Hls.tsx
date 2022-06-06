@@ -1,3 +1,12 @@
 import React from 'react'
 
-export const Hls = () => <div>Hls...</div>
+import { Hls } from '@/features/Hls/components'
+
+export const HlsPage: React.FC = () => (
+  <div>
+    <h1>Hls.js</h1>
+    <div>
+      <Hls />
+    </div>
+  </div>
+)

@@ -1,3 +1,8 @@
 .header {
   margin-bottom: 30px;
 }
+
+.link {
+  margin: 0 10px;
+  color: cadetblue;
+}
