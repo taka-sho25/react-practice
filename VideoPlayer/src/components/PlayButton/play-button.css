@@ -1,0 +1,9 @@
+.play {
+  background-image: url('@/assets/svg/play.svg');
+  background-repeat: no-repeat;
+  appearance: none;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border: none;
+}

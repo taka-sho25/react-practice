@@ -1,0 +1,10 @@
+.time {
+  font-size: 14px;
+}
+
+.current-time {
+  margin-right: 2px;
+}
+.total-time {
+  margin-left: 2px;
+}
