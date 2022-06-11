@@ -1,7 +1,9 @@
 .control-bar {
   background-color: #000;
   padding-top: 12px;
-  opacity: 0.7;
+  transition: opacity 0.5s, visibility 0s ease 0.5s;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .contents {
